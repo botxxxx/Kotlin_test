@@ -10,8 +10,8 @@
             type="android.view.View.OnClickListener" />
 
         <variable
-            name="user"
-            type="com.example.test.data.users.UserData" />
+            name="area"
+            type="com.example.test.data.area.AreaData" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -35,7 +35,7 @@
                 android:layout_height="65dp"
                 android:layout_marginStart="8dp"
                 android:src="@drawable/github_b_24px"
-                app:imageFromUrl="@{user.avatar_url}" />
+                app:imageFromUrl="@{area.e_Pic_URL}" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -47,37 +47,19 @@
                 android:paddingRight="15dp">
 
                 <TextView
-                    android:id="@+id/login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{user.login}"
+                    android:text="@{area.e_Name}"
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/site_admin"
-                    android:layout_width="70dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/rounded_blue"
-                    android:focusable="false"
-                    android:text="staff"
-                    android:textAlignment="center"
-                    android:textAllCaps="true"
-                    android:textColor="@android:color/white"
-                    android:textSize="15sp"
-                    app:isAdmin="@{user.site_admin}" />
+                    android:text="@{area.e_Info}"
+                    android:singleLine="true"
+                    android:textSize="20sp" />
 
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:padding="5dp"
-                android:textSize="20sp"
-                tools:ignore="RelativeOverlap" />
-
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </layout>

@@ -1,6 +1,5 @@
 package com.example.test.api
 
-import com.example.test.data.details.DetailData
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level
@@ -11,23 +10,28 @@ import java.util.concurrent.TimeUnit
 
 interface ApiService {
 
-    // Github - Resources in the REST API
-    // https://docs.github.com/en/rest/reference/search
-    @GET("search/users")
-    suspend fun getUsers(
-        @Query("page") page: Int = 1,
-        @Query("per_page") perPage: Int = 20,
-        @Query("q") q: String = "followers:>10000",
-        @Query("sort") sort: String = "contributions"
-    ): UserListResponse
+    // 臺北市立動物園_館區簡介
+    // https://data.taipei/#/dataset/detail?id=1ed45a8a-d26a-4a5f-b544-788a4071eea2
+    @GET("5a0e5fbb-72f8-41c6-908e-2fb25eff9b8a")
+    suspend fun getArea(
+        @Query("scope") scope: String = "resourceAquire",
+        @Query("q") q: String? = null,
+        @Query("limit") limit: Int? = null,
+        @Query("offset") offset: Int? = null
+    ): AreaResponse
 
-    @GET("users/{login}")
-    suspend fun getDetails(
-        @Path("login") login: String
-    ): DetailData
+    // 臺北市立動物園_植物資料
+    // https://data.taipei/#/dataset/detail?id=48c4d6a7-4b09-4d1f-9739-ee837d302bd1
+    @GET("f18de02f-b6c9-47c0-8cda-50efad621c14")
+    suspend fun getPlant(
+        @Query("scope") scope: String = "resourceAquire",
+        @Query("q") q: String? = null,
+        @Query("limit") limit: Int? = null,
+        @Query("offset") offset: Int? = null
+    ): PlantResponse
 
     companion object {
-        private const val BASE_URL = "https://api.github.com/"
+        private const val BASE_URL = "https://data.taipei/api/v1/dataset/"
         fun create(): ApiService {
             val logger = HttpLoggingInterceptor().apply { level = Level.BASIC }
 

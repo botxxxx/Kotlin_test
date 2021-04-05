@@ -1,4 +1,4 @@
-package com.example.test.data.users
+package com.example.test.data.plant
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
@@ -7,17 +7,19 @@ import com.example.test.api.ApiService
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class UserRepository @Inject constructor(
+class PlantRepository @Inject constructor(
     private val service: ApiService
 ) {
 
-    fun getSearchUser(): Flow<PagingData<UserData>> {
+    fun getSearchPlant(area:String): Flow<PagingData<PlantData>> {
         return Pager(
             config = PagingConfig(
                 enablePlaceholders = false,
                 pageSize = 20
             ),
-            pagingSourceFactory = { UsersPagingSource(service) }
+            pagingSourceFactory = { PlantPagingSource(service,area) }
         ).flow
     }
+
+    suspend fun getPlant(area: String) = service.getPlant(q = area).data.results[0]
 }

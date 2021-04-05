@@ -4,6 +4,7 @@ import android.os.Build
 import android.text.Html
 import android.text.method.LinkMovementMethod
 import android.text.util.Linkify
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.core.text.HtmlCompat
@@ -14,6 +15,7 @@ import com.example.test.R
 @BindingAdapter("imageFromUrl")
 fun bindImageFromUrl(view: ImageView, imageUrl: String?) {
     if (!imageUrl.isNullOrEmpty()) {
+        Log.d("com.example", "img:$imageUrl")
         Glide.with(view.context)
             .load(imageUrl)
             .centerCrop()

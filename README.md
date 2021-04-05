@@ -1,6 +1,6 @@
-GitHub_Users
+Taipei Zoo
 =================
-Create an Android app to display github users list and user information
+Create an Android app to display taipei zoo display areas and plant information with mvvm
 
 This sample showcases the following Architecture Components:
 

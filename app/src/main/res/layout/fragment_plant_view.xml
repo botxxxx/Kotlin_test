@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="clickListener"
             type="android.view.View.OnClickListener" />
 
         <variable
-            name="detail"
-            type="com.example.test.data.details.DetailData" />
+            name="plant"
+            type="com.example.test.data.plant.PlantData" />
     </data>
 
     <LinearLayout
@@ -54,7 +53,7 @@
                         android:layout_marginTop="25dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/github_b_24px"
-                        app:imageFromUrl="@{detail.avatar_url}" />
+                        app:imageFromUrl="@{plant.f_Pic01_URL}" />
                 </RelativeLayout>
             </RelativeLayout>
 
@@ -73,9 +72,9 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:singleLine="true"
-                    android:text="@{detail.name}"
+                    android:text="@{plant.f_Name_Ch}"
                     android:textAlignment="center"
-                    android:textSize="25sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/bio"
@@ -83,10 +82,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:singleLine="true"
-                    android:text="@{detail.bio}"
                     android:textAlignment="center"
-                    android:textSize="25sp" />
+                    android:textSize="20sp"
+                    android:scrollbars="vertical"
+                    app:isHtml="@{plant.F_AlsoKnown}" />
             </LinearLayout>
         </LinearLayout>
 
@@ -124,21 +123,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@{detail.login}"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/site_admin"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_blue"
-                        android:focusable="false"
-                        android:text="staff"
-                        android:textAlignment="center"
-                        android:textAllCaps="true"
-                        android:textColor="@android:color/white"
-                        android:textSize="15sp"
-                        app:isAdmin="@{detail.site_admin}" />
+                        android:textSize="20sp"
+                        android:scrollbars="vertical"
+                        app:isHtml="@{plant.f_Name_En}" />
                 </LinearLayout>
             </RelativeLayout>
 
@@ -168,8 +155,9 @@
                         android:id="@+id/location"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@{detail.location}"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:scrollbars="vertical"
+                        app:isHtml="@{plant.F_Location}" />
                 </LinearLayout>
             </RelativeLayout>
 
@@ -183,12 +171,12 @@
                     android:id="@+id/link_url"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:layout_centerVertical="true"
+                    android:layout_alignParentTop="true"
                     android:src="@drawable/link_b_24px" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="65dp"
+                    android:layout_height="match_parent"
                     android:layout_toRightOf="@+id/link_url"
                     android:gravity="center_vertical"
                     android:orientation="vertical"
@@ -199,8 +187,9 @@
                         android:id="@+id/blog"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:scrollbars="vertical"
                         android:textSize="20sp"
-                        app:isHtml="@{detail.blog}" />
+                        app:isHtml="@{plant.f_Feature}" />
                 </LinearLayout>
             </RelativeLayout>
         </LinearLayout>

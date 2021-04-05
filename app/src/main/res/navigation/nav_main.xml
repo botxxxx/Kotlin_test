@@ -2,15 +2,15 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/user_fragment">
+    app:startDestination="@id/display_areas_fragment">
 
     <fragment
-        android:id="@+id/user_fragment"
-        android:name="com.example.test.UserListFragment"
-        tools:layout="@layout/fragment_user_view">
+        android:id="@+id/display_areas_fragment"
+        android:name="com.example.test.DisplayAreasFragment"
+        tools:layout="@layout/fragment_display_areas_view">
         <action
-            android:id="@+id/action_user_to_detail"
-            app:destination="@id/detail_fragment"
+            android:id="@+id/action_display_areas_to_area"
+            app:destination="@id/area_fragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -18,11 +18,27 @@
     </fragment>
 
     <fragment
-        android:id="@+id/detail_fragment"
-        android:name="com.example.test.UserDetailFragment"
-        tools:layout="@layout/fragment_detail_view">
+        android:id="@+id/area_fragment"
+        android:name="com.example.test.AreaFragment"
+        tools:layout="@layout/fragment_area_view">
         <argument
-            android:name="login"
+            android:name="area"
+            app:argType="com.example.test.data.area.ParcelableAreaData" />
+        <action
+            android:id="@+id/action_area_to_plant"
+            app:destination="@id/plant_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/plant_fragment"
+        android:name="com.example.test.PlantFragment"
+        tools:layout="@layout/fragment_plant_view">
+        <argument
+            android:name="plant"
             app:argType="string" />
     </fragment>
 </navigation>

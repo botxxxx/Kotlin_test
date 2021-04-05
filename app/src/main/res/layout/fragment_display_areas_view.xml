@@ -25,7 +25,7 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/user_list"
+            android:id="@+id/area_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
@@ -35,7 +35,7 @@
             app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
             app:spanCount="@integer/grid_columns"
             tools:context="com.example.test.MainActivity"
-            tools:listitem="@layout/list_item_user" />
+            tools:listitem="@layout/item_area" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

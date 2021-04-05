@@ -18,6 +18,16 @@
         <entry key="..\:/ANDROID/Kotlin_test/app/src/main/res/layout/fragment_user_view.xml" value="0.10648148148148148" />
         <entry key="..\:/ANDROID/Kotlin_test/app/src/main/res/layout/fragment_view_pager.xml" value="0.1" />
         <entry key="..\:/ANDROID/Kotlin_test/app/src/main/res/layout/list_item_user.xml" value="0.16" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_area_view.xml" value="0.18206521739130435" />
+        <entry key="app/src/main/res/layout/fragment_display_areas_view.xml" value="0.20969202898550723" />
+        <entry key="app/src/main/res/layout/fragment_plant_view.xml" value="0.20969202898550723" />
+        <entry key="app/src/main/res/layout/fragment_user_view.xml" value="0.12993920972644377" />
+        <entry key="app/src/main/res/layout/item_area.xml" value="0.20969202898550723" />
+        <entry key="app/src/main/res/layout/item_plant.xml" value="0.20969202898550723" />
+        <entry key="app/src/main/res/layout/list_item_area.xml" value="0.18206521739130435" />
+        <entry key="app/src/main/res/layout/list_item_user.xml" value="0.1014780971197729" />
+        <entry key="app/src/main/res/xml/network_security_config.xml" value="0.13072916666666667" />
       </map>
     </option>
   </component>

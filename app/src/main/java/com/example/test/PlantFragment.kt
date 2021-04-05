@@ -5,18 +5,17 @@ import android.view.*
 import androidx.fragment.app.*
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
-import com.example.test.databinding.FragmentDetailViewBinding
-import com.example.test.viewmodels.DetailViewModel
+import com.example.test.databinding.FragmentPlantViewBinding
+import com.example.test.viewmodels.PlantViewModel
 import dagger.hilt.android.*
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 @AndroidEntryPoint
-class UserDetailFragment : Fragment() {
+class PlantFragment : Fragment() {
 
-    private val args: UserDetailFragmentArgs by navArgs()
-    private lateinit var binding: FragmentDetailViewBinding
-    private val viewModel: DetailViewModel by viewModels()
+    private val args: PlantFragmentArgs by navArgs()
+    private lateinit var binding: FragmentPlantViewBinding
+    private val viewModel: PlantViewModel by viewModels()
     private var searchJob: Job? = null
 
     override fun onCreateView(
@@ -24,20 +23,20 @@ class UserDetailFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentDetailViewBinding.inflate(inflater, container, false)
+        binding = FragmentPlantViewBinding.inflate(inflater, container, false)
         context ?: return binding.root
         binding.setClickListener {
             activity?.onBackPressed()
         }
 
-        subscribeUi(args.login)
+        subscribeUi(args.plant)
         return binding.root
     }
 
     private fun subscribeUi(login: String) {
         searchJob?.cancel()
         searchJob = lifecycleScope.launch {
-            binding.detail = viewModel.getResult(login)
+            binding.plant = viewModel.getResult(login)
         }
     }
 }
