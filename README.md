@@ -4,7 +4,6 @@ Create an Android app to display taipei zoo display areas and plant information 
 
 This sample showcases the following Architecture Components:
 
-* [Room](https://developer.android.com/topic/libraries/architecture/room.html)
 * [RecyclerView](https://developer.android.com/jetpack/androidx/releases/recyclerview.html)
 * [ViewModels](https://developer.android.com/reference/android/arch/lifecycle/ViewModel.html)
 * [Dagger](https://developer.android.com/training/dependency-injection/dagger-basics.html)
